@@ -1,0 +1,23 @@
+--- a/target/linux/generic/pending-4.14/0932-w1_of_node.patch
++++ b/target/linux/generic/pending-4.14/0932-w1_of_node.patch
+@@ -0,0 +1,20 @@
++--- a/drivers/w1/masters/w1-gpio.c
+++++ b/drivers/w1/masters/w1-gpio.c
++@@ -87,7 +87,7 @@
++ 
++ 	if (of_get_property(np, "linux,open-drain", NULL))
++ 		pdata->is_open_drain = 1;
++-
+++    if (pdev->dev.of_node) { /*(Virtual) of_node can be absent*/
++ 	gpio = of_get_gpio(np, 0);
++ 	if (gpio < 0) {
++ 		if (gpio != -EPROBE_DEFER)
++@@ -105,7 +106,7 @@
++ 	pdata->ext_pullup_enable_pin = gpio;
++ 
++ 	pdev->dev.platform_data = pdata;
++-
+++    }
++ 	return 0;
++ }
++ 
