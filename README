@@ -1,3 +1,13 @@
+# openwrt-18.06.4 Pоутеры с новым железом 
+* ramips
+- **[Kyan KY928A. rt5350 flash 4Mb, DDR1-32Mb, USB2.0](http://cyber-place.ru/showpost.php?p=38180&postcount=340)** и следующие сообщения.
+- **[Outengda-M810 WPL6036. MT7620 flash 4-8Mb, DDR2-64Mb, USB есть, но только питание.](http://cyber-place.ru/showpost.php?p=39138&postcount=319)**
+- **[WD7620N-R1-V1. MT7620 flash 4Mb, DDR1-32Mb, USB2.0](http://cyber-place.ru/showpost.php?p=41710&postcount=337)**
+- **[KYAN-300M. MT7628 flash 8Mb, DDR2-64Mb, USB2.0](http://cyber-place.ru/showpost.php?p=41711&postcount=338)**
+* Sunxi
+- **[Orange-pi-zero - включены Wifi, soc-audio, 1Wire](http://4pda.ru/forum/index.php?showtopic=782242&st=3960#entry84352989)**
+* =====================================
+
   _______                     ________        __
  |       |.-----.-----.-----.|  |  |  |.----.|  |_
  |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
