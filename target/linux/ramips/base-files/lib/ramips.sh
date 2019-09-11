@@ -298,6 +298,9 @@ ramips_board_detect() {
 	*"MiWiFi Nano")
 		name="miwifi-nano"
 		;;
+	*"KYAN 300M")
+		name="kyan-300m"
+		;;
 	*"MLW221")
 		name="mlw221"
 		;;
@@ -652,11 +655,41 @@ ramips_board_detect() {
 	*"WT1520 (8M)")
 		name="wt1520-8M"
 		;;
+	*"WT1520 (16M)")
+		name="wt1520-16M"
+		;;
+	*"KY928A (4M)")
+		name="ky928a-4M"
+		;;
+	*"KY928A (8M)")
+		name="ky928a-8M"
+		;;
+	*"KY928A (16M)")
+		name="ky928a-16M"
+		;;
 	*"WT3020 (4M)")
 		name="wt3020-4M"
 		;;
 	*"WT3020 (8M)")
 		name="wt3020-8M"
+		;;
+	*"WT3020 (16M)")
+		name="wt3020-16M"
+		;;
+	*"WPL6036 (4M)")
+		name="wpl6036-4M"
+		;;
+	*"WPL6036 (8M)")
+		name="wpl6036-8M"
+		;;
+	*"WPL6036 (16M)")
+		name="wpl6036-16M"
+		;;
+	*"WD7620N_R1 V1.0 (4M)")
+		name="wd7620n_r1-v1-4M"
+		;;
+	*"WD7620N_R1 V1.0 (8M)")
+		name="wd7620n_r1-v1-8M"
 		;;
 	*"WZR-AGL300NH")
 		name="wzr-agl300nh"

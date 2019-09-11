@@ -573,6 +573,7 @@ TARGET_DEVICES += wt3020-4M
 
 define Device/wt3020-8M
   DTS := WT3020-8M
+  IMAGE_SIZE := $(ralink_default_fw_size_8M)
   IMAGES += factory.bin
   SUPPORTED_DEVICES += wt3020
   IMAGE/factory.bin := $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | \
@@ -581,6 +582,70 @@ define Device/wt3020-8M
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
 endef
 TARGET_DEVICES += wt3020-8M
+
+define Device/wt3020-16M
+  DTS := WT3020-16M
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+  IMAGES += factory.bin
+  SUPPORTED_DEVICES += wt3020
+  IMAGE/factory.bin := $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | \
+	poray-header -B WT3020 -F 16M
+  DEVICE_TITLE := Nexx WT3020 (16MB)
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
+endef
+TARGET_DEVICES += wt3020-16M
+
+define Device/wpl6036-4M
+  DTS := WPL6036-4M
+  IMAGE_SIZE := $(ralink_default_fw_size_4M)
+  IMAGES += factory.bin
+  SUPPORTED_DEVICES += wpl6036
+  IMAGE/factory.bin := $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | \
+	poray-header -B WPL6036 -F 4M
+  DEVICE_TITLE := Outengda WPL6036 (4M)
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
+endef
+TARGET_DEVICES += wpl6036-4M
+
+define Device/wpl6036-8M
+  DTS := WPL6036-8M
+  IMAGE_SIZE := $(ralink_default_fw_size_8M)
+  IMAGES += factory.bin
+  SUPPORTED_DEVICES += wpl6036
+  IMAGE/factory.bin := $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | \
+	poray-header -B WPL6036 -F 8M
+  DEVICE_TITLE := Outengda WPL6036 (8M)
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
+endef
+TARGET_DEVICES += wpl6036-8M
+
+define Device/wpl6036-16M
+  DTS := WPL6036-16M
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+  IMAGES += factory.bin
+  SUPPORTED_DEVICES += wpl6036
+  IMAGE/factory.bin := $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | \
+	poray-header -B WPL6036 -F 16M
+  DEVICE_TITLE := Outengda WPL6036 (16M)
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
+endef
+TARGET_DEVICES += wpl6036-16M
+
+define Device/wd7620n_r1-v1-4M
+  DTS := WD7620N_R1-V1-4M
+  IMAGE_SIZE := $(ralink_default_fw_size_4M)
+  DEVICE_TITLE := WD7620N_R1 V1.0 (4MB) WIFI-repiter
+  DEVICE_PACKAGES := -ip6tables -odhcp6c -odhcpd-ipv6only -libip6tc -luci-proto-ipv6 -kmod-ip6tables -kmod-nf-ipt6
+endef
+TARGET_DEVICES += wd7620n_r1-v1-4M
+
+define Device/wd7620n_r1-v1-8M
+  DTS := WD7620N_R1-V1-8M
+  IMAGE_SIZE := $(ralink_default_fw_size_8M)
+  DEVICE_TITLE := WD7620N_R1 V1.0 (8MB) WIFI-repiter
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-core kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += wd7620n_r1-v1-8M
 
 define Device/y1
   DTS := Y1

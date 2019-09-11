@@ -81,6 +81,14 @@ define Device/miwifi-nano
 endef
 TARGET_DEVICES += miwifi-nano
 
+define Device/kyan-300m
+  DTS := KYAN-300M
+  IMAGE_SIZE := $(ralink_default_fw_size_8M)
+  DEVICE_TITLE := KYAN-300Mbps In-wall Wireless Access Point Wall Socket Wi-Fi Extender for Hotel Wi-Fi 
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
+endef
+TARGET_DEVICES += kyan-300m
+
 define Device/mt7628
   DTS := MT7628
   BLOCKSIZE := 64k

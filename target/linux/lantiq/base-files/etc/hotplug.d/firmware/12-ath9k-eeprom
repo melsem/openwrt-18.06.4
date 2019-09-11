@@ -141,7 +141,7 @@ case "$FIRMWARE" in
 			avm,fritz3370|avm,fritz7320|avm,fritz7360sl)
 				ath9k_eeprom_extract "urlader" 2437 0
 				;;
-			tplink,tdw8970|tplink,tdw8980)
+			tplink,tdw8970|tplink,tdw8980|tplink,TDW8970-16M|tplink,TDW8970-16Mcyber)
 				ath9k_eeprom_extract "boardconfig" 135168 0
 				;;
 			*)

@@ -49,3 +49,11 @@
 		};
 	};
 };
+ 
+&gpio1 {
+	status = "okay";
+};
+
+&gpio0 {
+	status = "okay";
+};

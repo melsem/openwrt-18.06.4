@@ -97,6 +97,7 @@ platform_check_image() {
 	miniembwifi|\
 	miwifi-mini|\
 	miwifi-nano|\
+	kyan-300m|\
 	mlw221|\
 	mlwg2|\
 	mofi3500-3gn|\
@@ -202,8 +203,18 @@ platform_check_image() {
 	wsr-600|\
 	wt1520-4M|\
 	wt1520-8M|\
+	wt1520-16M|\
+	ky928a-4M|\
+	ky928a-8M|\
+	ky928a-16M|\
 	wt3020-4M|\
 	wt3020-8M|\
+	wt3020-16M|\
+	wpl6036-4M|\
+	wpl6036-8M|\
+	wpl6036-16M|\
+	wd7620n_r1-v1-4M|\
+	wd7620n_r1-v1-8M|\
 	wzr-agl300nh|\
 	x5|\
 	x8|\

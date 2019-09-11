@@ -863,6 +863,42 @@ define Device/wt1520-8M
 endef
 TARGET_DEVICES += wt1520-8M
 
+define Device/wt1520-16M
+  DTS := WT1520-16M
+  IMAGES += factory.bin
+  IMAGE/factory.bin := \
+	$$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | poray-header -B WT1520 -F 16M
+  DEVICE_TITLE := Nexx WT1520 (16MB)
+endef
+TARGET_DEVICES += wt1520-16M
+
+define Device/ky928a-4M
+  DTS := KY928A-4M
+  IMAGES += factory.bin
+  IMAGE/factory.bin := \
+	$$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | poray-header -B KY928A -F 4M
+  DEVICE_TITLE := Kyan KY928A (4MB)
+endef
+TARGET_DEVICES += ky928a-4M
+
+define Device/ky928a-8M
+  DTS := KY928A-8M
+  IMAGES += factory.bin
+  IMAGE/factory.bin := \
+	$$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | poray-header -B KY928A -F 8M
+  DEVICE_TITLE := Kyan KY928A (8MB)
+endef
+TARGET_DEVICES += ky928a-8M
+
+define Device/ky928a-16M
+  DTS := KY928A-16M
+  IMAGES += factory.bin
+  IMAGE/factory.bin := \
+	$$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | poray-header -B KY928A -F 16M
+  DEVICE_TITLE := Kyan KY928A (16MB)
+endef
+TARGET_DEVICES += ky928a-16M
+
 define Device/x5
   DTS := X5
   IMAGES += factory.bin

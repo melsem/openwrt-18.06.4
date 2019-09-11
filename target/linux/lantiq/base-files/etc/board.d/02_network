@@ -10,7 +10,7 @@
 board_config_update
 
 vpi=1
-vci=32
+vci=40
 annex="a"
 tone="av"
 xfer_mode=""
@@ -178,7 +178,7 @@ zyxel,p-2812hnu-f1|zyxel,p-2812hnu-f3)
 		"0:lan" "1:lan" "2:lan" "4:lan" "5:wan" "6t@eth0"
 	;;
 
-tplink,tdw8970|tplink,tdw8980)
+tplink,tdw8970|tplink,tdw8980|tplink,TDW8970-16M|tplink,TDW8970-16Mcyber)
 	wan_mac=$(macaddr_add "$(mtd_get_mac_binary boardconfig 61696)" 1)
 	ucidef_add_switch "switch0" \
 		"0:lan:2" "2:lan:3" "4:lan:4" "5:lan:1" "6t@eth0"
@@ -237,7 +237,7 @@ else
 	ucidef_add_adsl_modem "$annex" "/lib/firmware/adsl.bin"
 fi
 
-ucidef_set_interface_wan "$interface_wan" "pppoe"
+ucidef_set_interface_wan "$interface_wan" "dhcp"
 
 [ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" "$lan_mac"
 [ -n "$wan_mac" ] && ucidef_set_interface_macaddr "wan" "$wan_mac"

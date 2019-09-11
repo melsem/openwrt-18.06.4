@@ -149,7 +149,11 @@ sl-r7205|\
 v11st-fe|\
 w306r-v20|\
 wt1520-4M|\
-wt1520-8M)
+wt1520-8M|\
+wt1520-16M|\
+ky928a-4M|\
+ky928a-8M|\
+ky928a-16M)
 	set_wifi_led "rt2800pci-phy0::radio"
 	;;
 dir-615-d|\
@@ -353,6 +357,12 @@ re6500)
 	ucidef_set_led_default "power" "power" "$boardname:white:power" "1"
 	ucidef_set_led_default "wifi" "wifi" "$boardname:orange:wifi" "1"
 	;;
+wpl6036-4M|\
+wpl6036-8M|\
+wpl6036-16M)
+	ucidef_set_led_netdev "lan" "lan" "$boardname:blue:lan" eth0.1
+	set_wifi_led "$boardname:blue:wifi"
+	;;
 rp-n53)
 	ucidef_set_led_netdev "eth" "Network" "$boardname:white:back" "eth0"
 	set_wifi_led "$boardname:blue:wifi"
@@ -373,6 +383,13 @@ rt-n14u)
 	ucidef_set_led_netdev "wan" "wan" "$boardname:blue:wan" eth0.2
 	set_wifi_led "$boardname:blue:air"
 	set_usb_led "$boardname:blue:usb"
+	;;
+wd7620n_r1-v1-4M|wd7620n_r1-v1-8M)
+	set_wifi_led "wd7620n_r1-v1:green:wifi"
+	ucidef_set_led_switch "lan" "lan" "wd7620n_r1-v1:green:lan" "switch0" "0x10"
+	ucidef_set_led_switch "wan" "wan" "wd7620n_r1-v1:green:wan" "switch0" "0x8"
+	set_usb_led "wd7620n_r1-v1:green:status"
+
 	;;
 tama,w06)
 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth0"
@@ -441,6 +458,10 @@ u7628-01-128M-16M)
 	set_usb_led "u7628-01:green:usb"
 	set_wifi_led "u7628-01:green:wlan"
 	;;
+kyan-300m)
+	ucidef_set_led_switch "lan" "lan" "$boardname:green:status" "switch0" "0x1e"
+	ucidef_set_led_wlan "wifi" "wifi" "$boardname:green:wifi" "phy0tpt"
+	;;
 vocore-8M|\
 vocore-16M)
 	ucidef_set_led_netdev "eth" "ETH" "vocore:orange:eth" "eth0"
@@ -484,7 +505,8 @@ wndr3700v5)
 	ucidef_set_led_default "power" "POWER" "$boardname:green:power" "0"
 	;;
 wt3020-4M|\
-wt3020-8M)
+wt3020-8M|\
+wt3020-16M)
 	ucidef_set_led_default "power" "power" "wt3020:blue:power" "0"
 	;;
 y1)

@@ -108,8 +108,12 @@ get_status_led() {
 	rut5xx|\
 	v11st-fe|\
 	wmr-300|\
+	kyan-300m|\
 	zbt-wg2626)
 		status_led="$boardname:green:status"
+		;;
+	wd7620n_r1-v1-4M|wd7620n_r1-v1-8M)
+		status_led="wd7620n_r1-v1:green:status"
 		;;
 	dlink,dwr-921-c1)
 		status_led="$boardname:green:sigstrength"
@@ -326,8 +330,14 @@ get_status_led() {
 		status_led="wrtnode:blue:indicator"
 		;;
 	wt3020-4M|\
-	wt3020-8M)
+	wt3020-8M|\
+	wt3020-16M)
 		status_led="wt3020:blue:power"
+		;;
+	wpl6036-4M|\
+	wpl6036-8M|\
+	wpl6036-16M)
+		status_led="wpl6036:blue:wifi"
 		;;
 	zbt-cpe102)
 		status_led="$boardname:green:4g-0"
