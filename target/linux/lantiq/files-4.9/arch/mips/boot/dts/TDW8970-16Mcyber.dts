@@ -1,0 +1,8 @@
+/dts-v1/;
+
+#include "TDW89X0cyber.dtsi"
+
+/ {
+	compatible = "tplink,tdw8970-16Mcyber", "tplink,tdw89x0cyber", "lantiq,xway", "lantiq,vr9";
+	model = "TP-LINK TD-W8970-16Mcyber";
+};

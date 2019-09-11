@@ -1,0 +1,53 @@
+/dts-v1/;
+
+#include "TDW89X0.dtsi"
+
+/ {
+	compatible = "tplink,tdw8970-16M", "tplink,tdw89x0", "lantiq,xway", "lantiq,vr9";
+	model = "TP-LINK TD-W8970-16M";
+};
+
+&spi {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pins_spi_default>;
+
+	status = "ok";
+
+	m25p80@4 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "jedec,spi-nor";
+		reg = <4 0>;
+		spi-max-frequency = <33250000>;
+		m25p,fast-read;
+
+		partitions {
+			compatible = "fixed-partitions";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			partition@0 {
+				reg = <0x0 0x20000>;
+				label = "u-boot";
+				read-only;
+			};
+
+			partition@20000 {
+				reg = <0x20000 0xfa0000>;
+				label = "firmware";
+			};
+
+			partition@fc0000 {
+				reg = <0xfc0000 0x10000>;
+				label = "config";
+				read-only;
+			};
+
+			ath9k_cal: partition@fd0000 {
+				reg = <0xfd0000 0x30000>;
+				label = "boardconfig";
+				read-only;
+			};
+		};
+	};
+};
